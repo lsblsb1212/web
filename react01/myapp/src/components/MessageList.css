@@ -1,0 +1,16 @@
+.msglist {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 24px 24px;
+}
+
+.msglist--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msglist--empty p {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
