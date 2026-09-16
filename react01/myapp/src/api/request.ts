@@ -20,7 +20,7 @@ import type { ApiResponse } from '../types';
 const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '/api';
 
 /** 请求超时（ms） */
-const TIMEOUT = 15000;
+const TIMEOUT = 30000;
 
 interface RequestOptions {
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
@@ -72,7 +72,7 @@ export async function request<T>(
  * 注释掉 mock，业务代码无需任何改动。
  * ------------------------------------------------------------
  */
-export const USE_MOCK = true;
+export const USE_MOCK = false;
 
 /** 模拟网络延迟 */
 export function mockDelay(ms = 500): Promise<void> {

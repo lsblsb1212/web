@@ -35,12 +35,12 @@ export async function sendChatMessage(
     };
   }
   return request<ChatResult>('/chat', {
-    method: 'POST',
+    method: 'get',
     body: req,
   });
 }
 
 /** 本地模拟回复：演示用，可替换为真实模型返回 */
 function replyOf(content: string): string {
-  return `已收到你的问题：「${content}」\n这是静态 Demo 的模拟回复。接入真实后端后，这里将返回模型生成的回答。`;
+  return `已收到你的问题：「${content}」\n\n这是静态 Demo 的模拟回复。接入真实后端后，这里将返回模型生成的回答。`;
 }
