@@ -44,12 +44,10 @@ export default function Sidebar({
         ))}
         {conversations.length === 0 && (
           <p className="sidebar__empty">暂无会话</p>
-        )}
+        )}  
       </nav>
 
-      <div className="sidebar__footer">
-       
-      </div>
+     
     </aside>
   );
 }

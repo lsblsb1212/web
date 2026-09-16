@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Sidebar from './components/Sidebar.tsx';
 import ChatWindow from './components/ChatWindow.tsx';
 import { sendChatMessage } from './api/chat.ts';
-import type { Conversation, Message } from './types';
+import type { Conversation, Message } from './types/index.ts';
 import './App.css';
 
 /** 简单的本地 id 生成 */
