@@ -5,6 +5,7 @@ import { sendChatMessage } from './api/chat.ts';
 import type { Conversation, Message } from './types/index.ts';
 import './App.css';
 
+
 /** 简单的本地 id 生成 */
 let counter = 0;
 function uid(prefix = 'id'): string {
@@ -66,11 +67,12 @@ export default function App() {
     try {
       // 调用 api 模板（mock 环境直接返回模拟回复）
       const { reply } = await sendChatMessage({ conversationId: convId, content });
+      const result=JSON.stringify(reply)
 
       const assistantMsg: Message = {
         id: uid('msg'),
         role: 'assistant',
-        content: reply,
+        content: result,
         createdAt: Date.now(),
       };
       updateConversation(convId, (c) => ({

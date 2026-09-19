@@ -35,7 +35,7 @@ export async function sendChatMessage(
     };
   }
   return request<ChatResult>('/chat', {
-    method: 'get',
+    method: 'POST',
     body: req,
   });
 }

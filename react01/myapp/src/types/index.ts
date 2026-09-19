@@ -37,11 +37,27 @@ export interface ChatRequest {
   conversationId: string;
   content: string;
 }
+interface Section {
+  type: string;             // "sight" | "food" | ...
+  title: string;
+  items: SectionItem[];     // list[SectionItem] → SectionItem[]
+}
+
+// 条目
+interface SectionItem {
+  name?: string;            // Optional[str] → string?（可选）
+  desc?: string;
+  open_time?: string;
+  address?: string;
+  traffic?: string;
+  price?: string;
+  reason?: string;
+}
 
 /** 发送消息响应数据 */
 export interface ChatResult {
   conversationId: string;
-  reply: string;
+  reply: Section[];
 }
 
 /** 会话列表项（对应 GET /api/conversations 响应模板） */
@@ -50,3 +66,4 @@ export interface ConversationSummary {
   title: string;
   updatedAt: number;
 }
+

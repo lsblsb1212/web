@@ -1,5 +1,6 @@
 import type { ApiResponse } from '../types';
 
+
 /**
  * API 请求基础封装（模板）
  * ------------------------------------------------------------
@@ -20,7 +21,7 @@ import type { ApiResponse } from '../types';
 const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '/api';
 
 /** 请求超时（ms） */
-const TIMEOUT = 30000;
+const TIMEOUT = 300000;
 
 interface RequestOptions {
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
