@@ -1,0 +1,7 @@
+.box{
+  height: 700px;
+  top:-100px;
+  overflow-y: scroll;
+  background-color: white;
+  opacity: 0.9;
+}

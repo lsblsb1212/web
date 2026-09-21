@@ -185,4 +185,13 @@
 .app{
   display: flex;
   height: 100%;
+  position: relative;
+}
+.show{
+  position:absolute;
+  right: 0;
+  top: 35px;
+  width: calc(100vw - 240px);
+  height: 300px;
+
 }

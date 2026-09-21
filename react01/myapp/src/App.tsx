@@ -4,7 +4,7 @@ import ChatWindow from './components/ChatWindow.tsx';
 import { sendChatMessage } from './api/chat.ts';
 import type { Conversation, Message } from './types/index.ts';
 import './App.css';
-
+import Renderbox from './components/render.tsx';
 
 /** 简单的本地 id 生成 */
 let counter = 0;
@@ -26,6 +26,11 @@ export default function App() {
   const pendingRef = useRef(false);
 
   const active = conversations.find((c) => c.id === activeId) ?? null;
+
+  const assistantMsgs = active?.messages.filter(m => m.role === 'assistant') ?? [];
+  const lastAssistantMsg = assistantMsgs[assistantMsgs.length - 1];
+  // 拿到AI返回的内容（就是你之前的reply）
+  const replyData = lastAssistantMsg?.content ?? null;
 
   // 进入页面默认新建一个空会话
   useEffect(() => {
@@ -85,7 +90,6 @@ export default function App() {
       setPending(false);
     }
   };
-
   return (
     <div className="app">
       <Sidebar
@@ -104,6 +108,10 @@ export default function App() {
         pending={pending}
         onSend={handleSend}
       />
+      <div className="show">
+        <Renderbox reply={replyData} />
+      </div>
     </div>
+    
   );
 }
