@@ -192,6 +192,9 @@
   right: 0;
   top: 35px;
   width: calc(100vw - 240px);
-  height: 300px;
+  height: 980px;
 
+}
+button{
+  background-color: aqua;
 }

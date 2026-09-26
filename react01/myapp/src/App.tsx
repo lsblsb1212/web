@@ -6,6 +6,7 @@ import type { Conversation, Message } from './types/index.ts';
 import './App.css';
 import Renderbox from './components/render.tsx';
 
+
 /** 简单的本地 id 生成 */
 let counter = 0;
 function uid(prefix = 'id'): string {
@@ -90,6 +91,7 @@ export default function App() {
       setPending(false);
     }
   };
+
   return (
     <div className="app">
       <Sidebar
@@ -111,6 +113,8 @@ export default function App() {
       <div className="show">
         <Renderbox reply={replyData} />
       </div>
+     
+
     </div>
     
   );
